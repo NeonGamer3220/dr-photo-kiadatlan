@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GYIK – dr-photo</title>
+    <meta
+      name="description"
+      content="Gyakran ismételt kérdések dr-photo fotózási és videós szolgáltatásairól."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <img
+            class="brand-mark"
+            src="images/dr photo logo.png"
+            alt="DR Photo logo"
+          />
+          <div>
+            <h1 class="brand-title">dr-photo</h1>
+            <p class="brand-tagline">Cinematic fotó & videó</p>
+          </div>
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Menü megnyitása"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" id="site-nav">
+          <a href="index.html">Kezdőlap</a>
+          <a href="magamrol.html">Magamról</a>
+          <a href="munkaim.html">Munkáim</a>
+          <a href="partnerek.html">Partnerek</a>
+          <a href="videok.html">Videók</a>
+          <a href="informaciok.html">Információk</a>
+          <a href="elerhetoseg.html">Elérhetőségeim</a>
+          <a href="gyik.html" class="is-active">GYIK</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+<section class="section faq" id="gyik">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Gyakori kérdések</p>
+            <h2>GYIK</h2>
+            <p>
+              Pár kérdés, amit gyakran megkapok – a részleteket mindig
+              személyre szabottan beszéljük át.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>Mennyivel előre érdemes foglalni?</summary>
+              <p>
+                Esküvők esetén érdemes legalább 6–12 hónappal a dátum előtt
+                érdeklődni, hogy biztosan szabad legyen az időpont. Portré és
+                kisebb projektek esetén rugalmasabb a naptár.
+              </p>
+            </details>
+            <details>
+              <summary>Utazol vidékre / külföldre is?</summary>
+              <p>
+                Igen, megbeszélés szerint Magyarországon belül és külföldre is
+                vállalok munkát. Az utazási költségeket előre egyeztetjük.
+              </p>
+            </details>
+            <details>
+              <summary>Mikor kapjuk meg a kész anyagokat?</summary>
+              <p>
+                Az elkészült, válogatott képeket általában 3–6 héten belül, a
+                videókat 4–8 héten belül adom át – a pontos határidőt mindig a
+                szerződésben rögzítjük.
+              </p>
+            </details>
+            <details>
+              <summary>Kapunk minden nyers fotót és videót is?</summary>
+              <p>
+                A csomagok a gondosan válogatott és retusált képeket / vágott
+                videókat tartalmazzák. A nyers anyagokat alapvetően nem adom át,
+                de egyedi kérés esetén meg tudjuk beszélni.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- Elérhetőségeim - rövid összefoglaló -->
+      <section class="section footer-contact-cta">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Elérhetőségeim</p>
+            <h2>Vedd fel velem a kapcsolatot</h2>
+            <p>
+              Írj bátran, ha fotózásról vagy forgatásról gondolkodsz – pár
+              sor az eseményről, dátumról és elképzeléseidről már elég
+              kezdésnek.
+            </p>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:doczi.robert@gmail.com">doczi.robert@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Telefon</span>
+              <a href="tel:+36205425908">+36 20 542 5908</a>
+            </li>
+            <li>
+              <span class="contact-label">Helyszín</span>
+              <span>Budapest és környéke • Országosan megbeszélés szerint</span>
+            </li>
+            <li>
+              <span class="contact-label">Közösségi média</span>
+              <div class="contact-socials">
+                <a
+                  href="https://www.youtube.com/@robertdoczi5941"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  >YouTube</a
+                >
+                <a
+                  href="https://www.facebook.com/p/Dr-Photo-100063641588811/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  >Facebook</a
+                >
+              </div>
+            </li>
+          </ul>
+
+          <a href="elerhetoseg.html" class="btn btn-primary">Írj üzenetet</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span id="year"></span> dr-photo – minden jog fenntartva.
+        </p>
+        <a href="#top" class="back-to-top">Vissza az elejére</a>
+      </div>
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div id="img-overlay">
+      <button id="close-overlay" aria-label="Bezárás">&times;</button>
+      <img id="overlay-img" src="" alt="Teljes képernyős kép">
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "dr-photo-portfolio",
+  "version": "1.0.0",
+  "description": "Vibráns, egyoldalas fotó és videó portfólió oldal (dr-photo) – GitHub Pages-re optimalizált statikus site.",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "photography",
+    "video",
+    "portfolio",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
