@@ -938,6 +938,116 @@ a {
   color: rgba(248, 250, 252, 0.7);
 }
 
+/* Frissítések (changelog) */
+
+.changelog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.changelog-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(55, 65, 81, 0.95);
+  background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.98),
+      rgba(15, 23, 42, 0.96)
+    ),
+    radial-gradient(circle at top, rgba(30, 64, 175, 0.6), transparent 55%);
+  padding: 1.5rem 1.75rem 1.75rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.changelog-card-latest {
+  border-color: rgba(236, 72, 153, 0.9);
+  background: radial-gradient(
+      circle at top left,
+      rgba(236, 72, 153, 0.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(59, 130, 246, 0.6),
+      transparent 60%
+    ),
+    rgba(15, 23, 42, 0.98);
+}
+
+.changelog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.changelog-version {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.changelog-badge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #f472b6, #6366f1);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.changelog-date {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.changelog-group {
+  margin-top: 0.9rem;
+}
+
+.changelog-group:first-of-type {
+  margin-top: 0;
+}
+
+.changelog-group-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #a5b4fc;
+}
+
+.changelog-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: none;
+}
+
+.changelog-card li {
+  margin: 0.3rem 0;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  position: relative;
+  line-height: 1.5;
+}
+
+.changelog-card li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: rgba(248, 250, 252, 0.7);
+}
+
 /* Partnerek */
 
 .partner-grid {
