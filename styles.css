@@ -465,7 +465,7 @@ a {
       rgba(15, 23, 42, 0.2),
       transparent 40%
     ),
-    url("images/közös-42.jpg");
+    url("images/kozos-42.jpg");
 }
 
 .hero-photo-secondary {
@@ -674,98 +674,98 @@ a {
 }
 
 /* Gallery image placeholders */
-.gallery-photo-1 { background-image: url("images/Alexandra és Tomi-20.jpg"); }
-.gallery-photo-2 { background-image: url("images/Alexandra és Tomi-22.jpg"); }
+.gallery-photo-1 { background-image: url("images/alexandra-es-tomi-20.jpg"); }
+.gallery-photo-2 { background-image: url("images/alexandra-es-tomi-22.jpg"); }
 
-.gallery-photo-3 { background-image: url("images/Brigi és Attila-106.jpg"); }
-.gallery-photo-4 { background-image: url("images/Brigi és Attila-29.jpg"); }
-.gallery-photo-5 { background-image: url("images/Brigi és Attila-41.jpg"); }
-.gallery-photo-6 { background-image: url("images/Brigi és Tomi-19.jpg"); }
-.gallery-photo-7 { background-image: url("images/Brigi és Tomi-13.jpg"); }
-.gallery-photo-8 { background-image: url("images/Brigi és Zoli-33.jpg"); }
-.gallery-photo-9 { background-image: url("images/Brigi és Tomi-41.jpg"); }
-.gallery-photo-10 { background-image: url("images/Brigi és Zoli-43.jpg"); }
+.gallery-photo-3 { background-image: url("images/brigi-es-attila-106.jpg"); }
+.gallery-photo-4 { background-image: url("images/brigi-es-attila-29.jpg"); }
+.gallery-photo-5 { background-image: url("images/brigi-es-attila-41.jpg"); }
+.gallery-photo-6 { background-image: url("images/brigi-es-tomi-19.jpg"); }
+.gallery-photo-7 { background-image: url("images/brigi-es-tomi-13.jpg"); }
+.gallery-photo-8 { background-image: url("images/brigi-es-zoli-33.jpg"); }
+.gallery-photo-9 { background-image: url("images/brigi-es-tomi-41.jpg"); }
+.gallery-photo-10 { background-image: url("images/brigi-es-zoli-43.jpg"); }
 
-.gallery-photo-11 { background-image: url("images/Brigi és Zoli-33.jpg"); }
-.gallery-photo-12 { background-image: url("images/Brigi és Zoli-43.jpg"); }
-.gallery-photo-13 { background-image: url("images/Brigi és Zoli-63.jpg"); }
-.gallery-photo-14 { background-image: url("images/Brigi és Zoli-67.jpg"); }
-.gallery-photo-15 { background-image: url("images/Brigi és Zoli-72.jpg"); }
-.gallery-photo-16 { background-image: url("images/Brigi és Zoli-75.jpg"); }
-.gallery-photo-17 { background-image: url("images/Brigi és Zoli-90.jpg"); }
+.gallery-photo-11 { background-image: url("images/brigi-es-zoli-33.jpg"); }
+.gallery-photo-12 { background-image: url("images/brigi-es-zoli-43.jpg"); }
+.gallery-photo-13 { background-image: url("images/brigi-es-zoli-63.jpg"); }
+.gallery-photo-14 { background-image: url("images/brigi-es-zoli-67.jpg"); }
+.gallery-photo-15 { background-image: url("images/brigi-es-zoli-72.jpg"); }
+.gallery-photo-16 { background-image: url("images/brigi-es-zoli-75.jpg"); }
+.gallery-photo-17 { background-image: url("images/brigi-es-zoli-90.jpg"); }
 
-.gallery-photo-18 { background-image: url("images/Buli 1-112.jpg"); }
-.gallery-photo-19 { background-image: url("images/Buli 1-144.jpg"); }
-.gallery-photo-20 { background-image: url("images/Buli 1-206.jpg"); }
-.gallery-photo-21 { background-image: url("images/Buli 1-219.jpg"); }
-.gallery-photo-22 { background-image: url("images/Buli 1-225.jpg"); }
-.gallery-photo-23 { background-image: url("images/Buli 1-248.jpg"); }
-.gallery-photo-24 { background-image: url("images/Buli 1-291.jpg"); }
-.gallery-photo-25 { background-image: url("images/Buli 1-300.jpg"); }
-.gallery-photo-26 { background-image: url("images/Buli 1-329.jpg"); }
-.gallery-photo-27 { background-image: url("images/Buli 1-45.jpg"); }
+.gallery-photo-18 { background-image: url("images/buli-1-112.jpg"); }
+.gallery-photo-19 { background-image: url("images/buli-1-144.jpg"); }
+.gallery-photo-20 { background-image: url("images/buli-1-206.jpg"); }
+.gallery-photo-21 { background-image: url("images/buli-1-219.jpg"); }
+.gallery-photo-22 { background-image: url("images/buli-1-225.jpg"); }
+.gallery-photo-23 { background-image: url("images/buli-1-248.jpg"); }
+.gallery-photo-24 { background-image: url("images/buli-1-291.jpg"); }
+.gallery-photo-25 { background-image: url("images/buli-1-300.jpg"); }
+.gallery-photo-26 { background-image: url("images/buli-1-329.jpg"); }
+.gallery-photo-27 { background-image: url("images/buli-1-45.jpg"); }
 
-.gallery-photo-28 { background-image: url("images/Buli 2-139.jpg"); }
-.gallery-photo-29 { background-image: url("images/Buli 2-169.jpg"); }
-.gallery-photo-30 { background-image: url("images/Buli 2-222.jpg"); }
-.gallery-photo-31 { background-image: url("images/Buli 2-62.jpg"); }
+.gallery-photo-28 { background-image: url("images/buli-2-139.jpg"); }
+.gallery-photo-29 { background-image: url("images/buli-2-169.jpg"); }
+.gallery-photo-30 { background-image: url("images/buli-2-222.jpg"); }
+.gallery-photo-31 { background-image: url("images/buli-2-62.jpg"); }
 
-.gallery-photo-32 { background-image: url("images/Buli éjfél után-169.jpg"); }
-.gallery-photo-33 { background-image: url("images/Buli éjfél után-68.jpg"); }
+.gallery-photo-32 { background-image: url("images/buli-ejfel-utan-169.jpg"); }
+.gallery-photo-33 { background-image: url("images/buli-ejfel-utan-68.jpg"); }
 
-.gallery-photo-34 { background-image: url("images/Buli éjfélig-255.jpg"); }
-.gallery-photo-35 { background-image: url("images/Buli éjfélig-276.jpg"); }
-.gallery-photo-36 { background-image: url("images/Buli éjfélig-61.jpg"); }
-.gallery-photo-37 { background-image: url("images/Buli éjfélig-68.jpg"); }
-.gallery-photo-38 { background-image: url("images/Buli éjfélig-70.jpg"); }
+.gallery-photo-34 { background-image: url("images/buli-ejfelig-255.jpg"); }
+.gallery-photo-35 { background-image: url("images/buli-ejfelig-276.jpg"); }
+.gallery-photo-36 { background-image: url("images/buli-ejfelig-61.jpg"); }
+.gallery-photo-37 { background-image: url("images/buli-ejfelig-68.jpg"); }
+.gallery-photo-38 { background-image: url("images/buli-ejfelig-70.jpg"); }
 
-.gallery-photo-39 { background-image: url("images/Buli-109.jpg"); }
-.gallery-photo-40 { background-image: url("images/Buli-120.jpg"); }
-.gallery-photo-41 { background-image: url("images/Buli-126.jpg"); }
-.gallery-photo-42 { background-image: url("images/Buli-145.jpg"); }
-.gallery-photo-43 { background-image: url("images/Buli-151.jpg"); }
-.gallery-photo-44 { background-image: url("images/Buli-164.jpg"); }
-.gallery-photo-45 { background-image: url("images/Buli-168.jpg"); }
-.gallery-photo-46 { background-image: url("images/Buli-21.jpg"); }
-.gallery-photo-47 { background-image: url("images/Buli-25.jpg"); }
-.gallery-photo-48 { background-image: url("images/Buli-37.jpg"); }
-.gallery-photo-49 { background-image: url("images/Buli-49.jpg"); }
-.gallery-photo-50 { background-image: url("images/Buli-80.jpg"); }
-.gallery-photo-51 { background-image: url("images/Buli-81.jpg"); }
+.gallery-photo-39 { background-image: url("images/buli-109.jpg"); }
+.gallery-photo-40 { background-image: url("images/buli-120.jpg"); }
+.gallery-photo-41 { background-image: url("images/buli-126.jpg"); }
+.gallery-photo-42 { background-image: url("images/buli-145.jpg"); }
+.gallery-photo-43 { background-image: url("images/buli-151.jpg"); }
+.gallery-photo-44 { background-image: url("images/buli-164.jpg"); }
+.gallery-photo-45 { background-image: url("images/buli-168.jpg"); }
+.gallery-photo-46 { background-image: url("images/buli-21.jpg"); }
+.gallery-photo-47 { background-image: url("images/buli-25.jpg"); }
+.gallery-photo-48 { background-image: url("images/buli-37.jpg"); }
+.gallery-photo-49 { background-image: url("images/buli-49.jpg"); }
+.gallery-photo-50 { background-image: url("images/buli-80.jpg"); }
+.gallery-photo-51 { background-image: url("images/buli-81.jpg"); }
 
-.gallery-photo-52 { background-image: url("images/Kriszti és Andris-109.jpg"); }
-.gallery-photo-53 { background-image: url("images/Kriszti és Andris-117.jpg"); }
+.gallery-photo-52 { background-image: url("images/kriszti-es-andris-109.jpg"); }
+.gallery-photo-53 { background-image: url("images/kriszti-es-andris-117.jpg"); }
 
-.gallery-photo-54 { background-image: url("images/Lilla és Béla-43.jpg"); }
-.gallery-photo-55 { background-image: url("images/Lilla és Béla-60.jpg"); }
+.gallery-photo-54 { background-image: url("images/lilla-es-bela-43.jpg"); }
+.gallery-photo-55 { background-image: url("images/lilla-es-bela-60.jpg"); }
 
-.gallery-photo-56 { background-image: url("images/Móni és Feri-36.jpg"); }
-.gallery-photo-57 { background-image: url("images/Móni és Feri-71.jpg"); }
-.gallery-photo-58 { background-image: url("images/Móni és Feri-74.jpg"); }
+.gallery-photo-56 { background-image: url("images/moni-es-feri-36.jpg"); }
+.gallery-photo-57 { background-image: url("images/moni-es-feri-71.jpg"); }
+.gallery-photo-58 { background-image: url("images/moni-es-feri-74.jpg"); }
 
-.gallery-photo-59 { background-image: url("images/Polgári-100.jpg"); }
-.gallery-photo-60 { background-image: url("images/Polgári-135.jpg"); }
-.gallery-photo-61 { background-image: url("images/Polgári-2.jpg"); }
-.gallery-photo-62 { background-image: url("images/Polgári-65.jpg"); }
-.gallery-photo-63 { background-image: url("images/Polgári-66.jpg"); }
+.gallery-photo-59 { background-image: url("images/polgari-100.jpg"); }
+.gallery-photo-60 { background-image: url("images/polgari-135.jpg"); }
+.gallery-photo-61 { background-image: url("images/polgari-2.jpg"); }
+.gallery-photo-62 { background-image: url("images/polgari-65.jpg"); }
+.gallery-photo-63 { background-image: url("images/polgari-66.jpg"); }
 
-.gallery-photo-64 { background-image: url("images/Szabina és Zsolt-39.jpg"); }
-.gallery-photo-65 { background-image: url("images/Szabina és Zsolt-73.jpg"); }
+.gallery-photo-64 { background-image: url("images/szabina-es-zsolt-39.jpg"); }
+.gallery-photo-65 { background-image: url("images/szabina-es-zsolt-73.jpg"); }
 
-.gallery-photo-66 { background-image: url("images/Szertartás-156.jpg"); }
-.gallery-photo-67 { background-image: url("images/Szertartás-88.jpg"); }
+.gallery-photo-66 { background-image: url("images/szertartas-156.jpg"); }
+.gallery-photo-67 { background-image: url("images/szertartas-88.jpg"); }
 
-.gallery-photo-68 { background-image: url("images/Tánc , játék , torta-101.jpg"); }
-.gallery-photo-69 { background-image: url("images/Tánc , játék , torta-119.jpg"); }
-.gallery-photo-70 { background-image: url("images/Tánc , játék , torta-29.jpg"); }
-.gallery-photo-71 { background-image: url("images/Tánc , játék , torta-36.jpg"); }
-.gallery-photo-72 { background-image: url("images/Tánc , játék , torta-43.jpg"); }
-.gallery-photo-73 { background-image: url("images/Tánc , játék , torta-71.jpg"); }
-.gallery-photo-74 { background-image: url("images/Tánc , játék , torta-81.jpg"); }
+.gallery-photo-68 { background-image: url("images/tanc-jatek-torta-101.jpg"); }
+.gallery-photo-69 { background-image: url("images/tanc-jatek-torta-119.jpg"); }
+.gallery-photo-70 { background-image: url("images/tanc-jatek-torta-29.jpg"); }
+.gallery-photo-71 { background-image: url("images/tanc-jatek-torta-36.jpg"); }
+.gallery-photo-72 { background-image: url("images/tanc-jatek-torta-43.jpg"); }
+.gallery-photo-73 { background-image: url("images/tanc-jatek-torta-71.jpg"); }
+.gallery-photo-74 { background-image: url("images/tanc-jatek-torta-81.jpg"); }
 
-.gallery-photo-75 { background-image: url("images/Vica és Berti-15.jpg"); }
-.gallery-photo-76 { background-image: url("images/Vica és Berti-36.jpg"); }
-.gallery-photo-77 { background-image: url("images/Vica és Berti-9.jpg"); }
+.gallery-photo-75 { background-image: url("images/vica-es-berti-15.jpg"); }
+.gallery-photo-76 { background-image: url("images/vica-es-berti-36.jpg"); }
+.gallery-photo-77 { background-image: url("images/vica-es-berti-9.jpg"); }
 
 /* Videos */
 
