@@ -10,13 +10,13 @@ const DEFAULTS = {
 const KEY = "dr-photo-prices";
 
 module.exports = async function handler(req, res) {
-  const KV_URL = process.env.KV_REST_API_URL;
-  const KV_TOKEN = process.env.KV_REST_API_TOKEN;
+  const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
 
   if (!KV_URL || !KV_TOKEN) {
     return res.status(500).json({
       error:
-        "Az adatbázis nincs csatlakoztatva ehhez a projekthez (hiányzó KV_REST_API_URL / KV_REST_API_TOKEN).",
+        "Az adatbázis nincs csatlakoztatva ehhez a projekthez (hiányzó KV_REST_API_URL/UPSTASH_REDIS_REST_URL vagy a token).",
     });
   }
 
