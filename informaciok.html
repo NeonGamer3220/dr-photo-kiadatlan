@@ -72,7 +72,7 @@
           <div class="packages-grid">
             <article class="package-card">
               <h3>Jegyes, kreatív fotózás</h3>
-              <p class="package-price">65.000 Ft</p>
+              <p class="package-price" id="price-jegyes" data-default="65.000 Ft">65.000 Ft</p>
               <ul>
                 <li>2-3 óra időtartam</li>
                 <li>kb 30 db retusált kép</li>
@@ -82,7 +82,7 @@
 
             <article class="package-card">
               <h3>Alap csomag</h3>
-              <p class="package-price">180.000 Ft</p>
+              <p class="package-price" id="price-alap" data-default="180.000 Ft">180.000 Ft</p>
               <ul>
                 <li>Egyházi/Polgári szertartás</li>
                 <li>Csoport képek</li>
@@ -95,7 +95,7 @@
 
             <article class="package-card package-card-highlight">
               <h3>Álom csomag</h3>
-              <p class="package-price">275.000 Ft</p>
+              <p class="package-price" id="price-alom" data-default="275.000 Ft">275.000 Ft</p>
               <ul>
                 <li>Helyszín, dekor</li>
                 <li>Előkészületek fotózása</li>
@@ -131,6 +131,28 @@
           </div>
         </div>
       </section>
+
+      <script>
+        (function () {
+          fetch("/api/prices")
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (data) {
+              if (!data || !data.prices) return;
+              var prices = data.prices;
+              ["jegyes", "alap", "alom"].forEach(function (key) {
+                var el = document.getElementById("price-" + key);
+                if (el && prices[key]) {
+                  el.textContent = prices[key];
+                }
+              });
+            })
+            .catch(function () {
+              /* hiba esetén marad az oldalba beégetett alapérték */
+            });
+        })();
+      </script>
     </main>
 
     <footer class="site-footer">

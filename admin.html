@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin – dr-photo</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="images/dr-photo-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <!-- Bejelentkező kártya -->
+      <div class="admin-card" id="login-card">
+        <div class="admin-brand">
+          <img src="images/dr-photo-logo.png" alt="DR Photo logo" />
+          <span>dr-photo</span>
+        </div>
+        <p class="admin-eyebrow">Admin felület</p>
+        <h1>Bejelentkezés</h1>
+        <p>Csak a weboldal tulajdonosa számára.</p>
+
+        <form id="login-form" autocomplete="off">
+          <div class="admin-field">
+            <label for="admin-name">Név</label>
+            <input type="text" id="admin-name" name="name" autocomplete="off" required />
+          </div>
+          <div class="admin-field">
+            <label for="admin-pass">Jelszó</label>
+            <input type="password" id="admin-pass" name="password" autocomplete="off" required />
+          </div>
+          <button type="submit" class="admin-submit">Belépés</button>
+          <div class="admin-error" id="login-error">Hibás név vagy jelszó.</div>
+        </form>
+
+        <a href="/" class="admin-view-link">&larr; Vissza a weboldalra</a>
+      </div>
+
+      <!-- Admin panel (rejtve, bejelentkezés után jelenik meg) -->
+      <div class="admin-card admin-card-wide" id="panel-card" style="display: none">
+        <div class="admin-topbar">
+          <div class="admin-brand" style="margin-bottom: 0">
+            <img src="images/dr-photo-logo.png" alt="DR Photo logo" />
+            <span>dr-photo · Admin</span>
+          </div>
+          <button class="admin-logout" id="logout-btn">Kijelentkezés</button>
+        </div>
+
+        <p class="admin-eyebrow">Információk fülke</p>
+        <h1>Csomagárak szerkesztése</h1>
+        <p>
+          Itt módosíthatod a Csomagok árait – a mentés után azonnal
+          megjelenik az Információk oldalon.
+        </p>
+
+        <form id="prices-form">
+          <div class="admin-package">
+            <h2>Jegyes, kreatív fotózás</h2>
+            <div class="admin-field">
+              <label for="price-jegyes-input">Ár</label>
+              <input type="text" id="price-jegyes-input" placeholder="pl. 65.000 Ft" />
+            </div>
+          </div>
+
+          <div class="admin-package">
+            <h2>Alap csomag</h2>
+            <div class="admin-field">
+              <label for="price-alap-input">Ár</label>
+              <input type="text" id="price-alap-input" placeholder="pl. 180.000 Ft" />
+            </div>
+          </div>
+
+          <div class="admin-package">
+            <h2>Álom csomag</h2>
+            <div class="admin-field">
+              <label for="price-alom-input">Ár</label>
+              <input type="text" id="price-alom-input" placeholder="pl. 275.000 Ft" />
+            </div>
+          </div>
+
+          <button type="submit" class="admin-submit">Mentés</button>
+          <div class="admin-toast" id="save-toast">Mentve! Az árak frissültek.</div>
+        </form>
+
+        <a href="informaciok" class="admin-view-link">Információk oldal megtekintése &rarr;</a>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var SESSION_KEY = "dr-photo-admin-session";
+
+        var loginCard = document.getElementById("login-card");
+        var panelCard = document.getElementById("panel-card");
+        var loginForm = document.getElementById("login-form");
+        var loginError = document.getElementById("login-error");
+        var logoutBtn = document.getElementById("logout-btn");
+        var pricesForm = document.getElementById("prices-form");
+        var saveToast = document.getElementById("save-toast");
+        var submitBtn = loginForm.querySelector(".admin-submit");
+
+        function getSession() {
+          try {
+            return JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+          } catch (e) {
+            return null;
+          }
+        }
+
+        function setSession(name, password) {
+          sessionStorage.setItem(
+            SESSION_KEY,
+            JSON.stringify({ name: name, password: password })
+          );
+        }
+
+        function clearSession() {
+          sessionStorage.removeItem(SESSION_KEY);
+        }
+
+        function showError(msg) {
+          loginError.textContent = msg;
+          loginError.classList.add("is-visible");
+        }
+
+        function loadPrices() {
+          fetch("/api/prices")
+            .then(function (r) {
+              return r.json();
+            })
+            .then(function (data) {
+              if (!data || !data.prices) return;
+              document.getElementById("price-jegyes-input").value = data.prices.jegyes || "";
+              document.getElementById("price-alap-input").value = data.prices.alap || "";
+              document.getElementById("price-alom-input").value = data.prices.alom || "";
+            })
+            .catch(function () {
+              showError("Nem sikerült betölteni az árakat az adatbázisból.");
+            });
+        }
+
+        function showPanel() {
+          loginCard.style.display = "none";
+          panelCard.style.display = "block";
+          loadPrices();
+        }
+
+        function showLogin() {
+          panelCard.style.display = "none";
+          loginCard.style.display = "block";
+        }
+
+        // ha van aktív munkamenet, próbáljuk visszaállítani
+        var session = getSession();
+        if (session && session.name && session.password) {
+          showPanel();
+        }
+
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          loginError.classList.remove("is-visible");
+          var name = document.getElementById("admin-name").value.trim();
+          var pass = document.getElementById("admin-pass").value;
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Belépés...";
+
+          fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: name, password: pass }),
+          })
+            .then(function (r) {
+              return r.json().then(function (data) {
+                return { ok: r.ok, data: data };
+              });
+            })
+            .then(function (res) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Belépés";
+              if (res.ok && res.data.ok) {
+                setSession(name, pass);
+                showPanel();
+              } else {
+                showError((res.data && res.data.error) || "Hibás név vagy jelszó.");
+              }
+            })
+            .catch(function () {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Belépés";
+              showError("Nem sikerült kapcsolódni a szerverhez.");
+            });
+        });
+
+        logoutBtn.addEventListener("click", function () {
+          clearSession();
+          showLogin();
+        });
+
+        pricesForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var session = getSession();
+          if (!session) {
+            showLogin();
+            return;
+          }
+
+          var saveBtn = pricesForm.querySelector(".admin-submit");
+          saveBtn.disabled = true;
+          saveBtn.textContent = "Mentés...";
+          saveToast.classList.remove("is-visible");
+
+          var prices = {
+            jegyes: document.getElementById("price-jegyes-input").value.trim(),
+            alap: document.getElementById("price-alap-input").value.trim(),
+            alom: document.getElementById("price-alom-input").value.trim(),
+          };
+
+          fetch("/api/prices", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: session.name,
+              password: session.password,
+              prices: prices,
+            }),
+          })
+            .then(function (r) {
+              return r.json().then(function (data) {
+                return { status: r.status, ok: r.ok, data: data };
+              });
+            })
+            .then(function (res) {
+              saveBtn.disabled = false;
+              saveBtn.textContent = "Mentés";
+              if (res.ok && res.data.ok) {
+                saveToast.textContent = "Mentve! Az árak frissültek – mindenki ezt fogja látni.";
+                saveToast.style.background = "";
+                saveToast.style.borderColor = "";
+                saveToast.style.color = "";
+                saveToast.classList.add("is-visible");
+                setTimeout(function () {
+                  saveToast.classList.remove("is-visible");
+                }, 3000);
+              } else if (res.status === 401) {
+                clearSession();
+                showLogin();
+                showError("Lejárt a munkameneted, jelentkezz be újra.");
+              } else {
+                saveToast.textContent = (res.data && res.data.error) || "Hiba a mentés közben.";
+                saveToast.style.background = "rgba(239, 68, 68, 0.12)";
+                saveToast.style.borderColor = "rgba(239, 68, 68, 0.4)";
+                saveToast.style.color = "#fca5a5";
+                saveToast.classList.add("is-visible");
+              }
+            })
+            .catch(function () {
+              saveBtn.disabled = false;
+              saveBtn.textContent = "Mentés";
+              saveToast.textContent = "Nem sikerült kapcsolódni a szerverhez.";
+              saveToast.classList.add("is-visible");
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
