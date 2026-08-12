@@ -12,6 +12,9 @@
     "static-site"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^4.7.0"
+  }
 }
 

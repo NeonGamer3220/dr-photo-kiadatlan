@@ -1,43 +1,16 @@
 // /api/prices – csomagárak lekérése (mindenki) és frissítése (csak admin)
-// Adatbázis: Vercel KV (Upstash Redis REST API)
+// Az adatbázis-kapcsolatot az api/_db.js intézi (REST API vagy REDIS_URL).
 
-const DEFAULTS = {
-  jegyes: "65.000 Ft",
-  alap: "180.000 Ft",
-  alom: "275.000 Ft",
-};
-
-const KEY = "dr-photo-prices";
+const { getPrices, setPrices, DEFAULTS } = require("./_db");
 
 module.exports = async function handler(req, res) {
-  const KV_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-  const KV_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
-
-  if (!KV_URL || !KV_TOKEN) {
-    return res.status(500).json({
-      error:
-        "Az adatbázis nincs csatlakoztatva ehhez a projekthez (hiányzó KV_REST_API_URL/UPSTASH_REDIS_REST_URL vagy a token).",
-    });
-  }
-
   if (req.method === "GET") {
     try {
-      const r = await fetch(`${KV_URL}/get/${KEY}`, {
-        headers: { Authorization: `Bearer ${KV_TOKEN}` },
-      });
-      const data = await r.json();
-      let prices = DEFAULTS;
-      if (data && data.result) {
-        try {
-          prices = { ...DEFAULTS, ...JSON.parse(data.result) };
-        } catch (e) {
-          prices = DEFAULTS;
-        }
-      }
+      const prices = await getPrices();
       res.setHeader("Cache-Control", "no-store");
       return res.status(200).json({ prices });
     } catch (e) {
-      return res.status(500).json({ error: "Hiba az árak betöltésekor." });
+      return res.status(500).json({ error: e.message || "Hiba az árak betöltésekor." });
     }
   }
 
@@ -69,14 +42,10 @@ module.exports = async function handler(req, res) {
     };
 
     try {
-      await fetch(`${KV_URL}/set/${KEY}`, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${KV_TOKEN}` },
-        body: JSON.stringify(clean),
-      });
+      await setPrices(clean);
       return res.status(200).json({ ok: true, prices: clean });
     } catch (e) {
-      return res.status(500).json({ error: "Hiba a mentés közben." });
+      return res.status(500).json({ error: e.message || "Hiba a mentés közben." });
     }
   }
 
